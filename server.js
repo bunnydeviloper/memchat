@@ -1,16 +1,20 @@
 //const gm = require('gm');
-//const bodyParser = require('body-parser');
-const fs = require('fs');
+
+// Parse incoming request bodies in a middleware before your handlers (to use req.body property)
+const bodyParser = require('body-parser');
+const fs = require('file-system');
 const express = require('express');
 const app = express();
 
 app.listen(8080, () => console.log('Server is running, navigate to http://localhost:8080/'));
 app.use(express.static('public'));
-//app.use(bodyParser.json({limit: '500mb'}));
+app.use(bodyParser.json({limit: '500mb'}));
 
 // Listen to a POST request from the submit message button
 app.post('/submit', (req, res) => {
-  fs.writeFile('/chatdb/submit.txt', `\n Name: ${req.body.name} Comment: ${rea.body.comment} \n`);
+  console.log(req.body);
+  fs.writeFile('/chatdb/submit.txt', `\n Name: ${req.body.name} Comment: ${req.body.message} \n`);
+  console.log('wrote to file');
   res.send('Got the POST request!');
 });
 
