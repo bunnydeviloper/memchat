@@ -2,20 +2,20 @@
 const submitMsg = document.getElementById('submitMsg');
 submitMsg.onclick = () => {
   const name = document.getElementById('name').value;
-  const comment = document.getElementById('comment').value;
+  const message = document.getElementById('message').value;
   const xhttp = new XMLHttpRequest();
   xhttp.open('POST', '/submit');
   xhttp.setRequestHeader('content-type', 'application/json');
   xhttp.send(JSON.stringify({
     name,
-    comment
+    message
   }));
 }
 
 // Get chat file every second & display at the box below
 const getMessages = () => {
   const xhttp = new XMLHttpRequest();
-  xhttp.open('GET', '/inbox.txt');
+  xhttp.open('GET', '/submit.txt');
   xhttp.onreadystatechange = () => {
     if(xhttp.responseText){
       const content = document.getElementById('messages');
