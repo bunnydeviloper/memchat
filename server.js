@@ -1,14 +1,11 @@
+//const gm = require('gm');
+//const bodyParser = require('body-parser');
+const fs = require('fs');
 const express = require('express');
 const app = express();
 
-const fs = require('fs');
-
-//const gm = require('gm');
-//const bodyParser = require('body-parser');
-
-app.listen(8000);
+app.listen(8080, () => console.log('Server running on PORT 8080!'));
 app.use(express.static('public'));
-
 //app.use(bodyParser.json({limit: '500mb'}));
 
 // Listen to a POST request from the submit message button
