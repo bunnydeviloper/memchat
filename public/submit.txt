@@ -1,2 +1,6 @@
 
- Name: hello Comment: helsaofha 
+ Name: tt Comment: this is a test message 
+
+ Name: ;afjsk Comment: helllloooooo 
+
+ Name: server Comment: you must add cb to fs.appendFile() 
