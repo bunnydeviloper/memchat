@@ -6,7 +6,7 @@ const fs = require('file-system');
 const express = require('express');
 const app = express();
 
-app.listen(8080, () => console.log('Server is running, navigate to http://localhost:8080/'));
+app.listen(8070, () => console.log('Server is running, navigate to http://localhost:8070/'));
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '500mb'}));
 
