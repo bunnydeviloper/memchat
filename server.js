@@ -13,8 +13,10 @@ app.use(bodyParser.json({limit: '500mb'}));
 // Listen to a POST request from the submit message button
 app.post('/submit', (req, res) => {
   console.log(req.body);
-  fs.writeFile('./public/submit.txt', `\n Name: ${req.body.name} Comment: ${req.body.message} \n`);
-  console.log('wrote to file');
+  fs.appendFile('./public/submit.txt',
+    `\n Name: ${req.body.name} Comment: ${req.body.message} \n`,
+    function(err) { if (err) throw err; }); // must include cb at the end
+  console.log('Message successfully saved to .public/submit.txt');
   res.send('Got the POST request!');
 });
 
