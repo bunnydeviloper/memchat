@@ -15,7 +15,7 @@ submitMsg.onclick = () => {
 // Get chat file every second & display at the box below
 const getMessages = () => {
   const xhttp = new XMLHttpRequest();
-  xhttp.open('GET', '/submit.txt');
+  xhttp.open('GET', './submit.txt');
   xhttp.onreadystatechange = () => {
     if(xhttp.responseText){
       const content = document.getElementById('messages');
